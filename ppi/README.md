@@ -7,3 +7,7 @@ The network is represented as a node table and an edge table. The node table tak
 
 | node_id | feature_1 | feature_2 | ... | feature_m |
 |:---:|:---:|:---:|:---:|
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
