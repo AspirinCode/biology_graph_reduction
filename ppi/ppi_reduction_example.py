@@ -170,6 +170,6 @@ for k,v in d.items():
     d1['original'].append(k)
     d1['new'].append(v)
 contraction_record = pd.DataFrame(d1)
-contraction_record.to_csv(output_path + instance_id + '.csv', index=False)
+contraction_record.to_csv(output_path + instance_id + '_record.csv', index=False)
 
 print(time.time() - s)
