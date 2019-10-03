@@ -30,4 +30,11 @@ This is an example of network reduction for PPI network.
     
 2. Network reduction
 
-    The network reduction is highly correlated with the applications/purpose of the study since it is related to certain node features. In this example, we presented a simple case. We reduce the network by contracting edges (merging nodes), whose two nodes (proteins) belong to the same pathway AND have the same gene expression.
+    The network reduction is highly correlated with the applications/purpose of the study since it is related to certain node features. In this example, we presented a simple case. We reduce the network by contracting edges (merging nodes), whose two nodes (proteins) belong to the same pathway AND have the same gene expression AND neither of them are kinases. In order to do that, we loaded the following data:
+    
+    - `./data/master_edge_table.csv` -- The edge table from STRING as described above. NOTE that this is not the original string. Only interactions with score above 500 is retained and some isolated proteins are removed.
+    - `./data/affinity.csv` -- Binding affinity data. This has no effect on the network reduction. It is used to load add the binding affinity features to nodes.
+    - `./data/pathway_info.csv` -- Pathway information of all the proteins in the processed STIRING. "unknown" is used for the missing values.
+    - `./data/diseases_scores.csv` -- Disease related importance scores of all the proteins in the processed STIRING. 0 is used for the missing values.
+    - `./data/kinases.pkl` -- A list of all kinases.
+    - `./data/1321N1.csv` -- Gene expressions of all the proteins in the processed STIRING. The missing values are filled by the majority of the neighbors' gene expression.
