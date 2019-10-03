@@ -45,30 +45,26 @@ s = time.time()
 """
 Set up the necessary paths
 """
-root = '../../../ski_data/original_node_tables/'
-table_path = '../../../ski_data/contracted_tables/'
-graph_path = '../../../ski_data/contracted_graphs/'
-record_path = '../../../ski_data/contraction_records/'
+root = './data/'
+output_path = './reduced_output/'
 """
-Load master_edge_table, GR50, affinity data, pathway data, disease scores, and kinase information
+Load master_edge_table, affinity data, pathway data, disease scores, and kinase information
 """
-master_edge_table = pd.read_csv('../../../ski_data/master_edge_table.csv')
-gr50 = pd.read_csv('../../../ski_data/gr50.csv') # only used create the instance
-ba = pd.read_csv('../../../ski_data/affinity.csv')
-raw_pathways = pd.read_csv('../../../ski_data/pathway_info.csv')
-z_scores = pd.read_csv('../../../ski_data/diseases_scores.csv')
-with open('../../../ski_data/kinases.pkl','rb') as f:    
+master_edge_table = pd.read_csv(root + 'master_edge_table.csv')
+ba = pd.read_csv(root + 'affinity.csv')
+raw_pathways = pd.read_csv(root + 'pathway_info.csv')
+z_scores = pd.read_csv(root + 'diseases_scores.csv')
+with open(root + 'kinases.pkl','rb') as f:    
     kinases = pickle.load(f)
 """
 create instance paths based on the combination of different cell line and drug name
 """
-combination = gr50.loc[1752, ['Cell_Line', 'Small_Molecule']].tolist()
+instance_id = '1321N1_lapatinib'
+combination = instance_id.split('_')
 cell_line = combination[0]
 drug = combination[1]
-instance_id = '_'.join(combination)
-ge_folder = '../../../ski_data/gene_expressions/'
+ge_folder = './gene_expressions/'
 ge = pd.read_csv(ge_folder + cell_line + '.csv')
-os.mkdir(table_path + instance_id)
 """
 Generate instance node table (original_node_table)
 """
@@ -166,14 +162,14 @@ nx.set_node_attributes(GG, attr_d)
 """
 Save stuff
 """
-nx.write_gexf(GG, graph_path + instance_id + '.gexf')
-node_table_final.to_csv(table_path + instance_id + '/' + 'contracted_node_table_{}.csv'.format(instance_id), index=False)
-new_edge_table.to_csv(table_path + instance_id + '/' + 'contracted_edge_table_{}.csv'.format(instance_id), index=False)
+nx.write_gexf(GG, output_path + instance_id + '.gexf')
+node_table_final.to_csv(output_path + instance_id + '/' + 'contracted_node_table_{}.csv'.format(instance_id), index=False)
+new_edge_table.to_csv(output_path + instance_id + '/' + 'contracted_edge_table_{}.csv'.format(instance_id), index=False)
 d1 = {'original':[], 'new':[]}
 for k,v in d.items():
     d1['original'].append(k)
     d1['new'].append(v)
 contraction_record = pd.DataFrame(d1)
-contraction_record.to_csv(record_path + instance_id + '.csv', index=False)
+contraction_record.to_csv(output_path + instance_id + '.csv', index=False)
 
 print(time.time() - s)
