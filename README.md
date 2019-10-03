@@ -14,4 +14,5 @@ This README file is written by Limeng Pu.
 # Biological Networks
 
 1. Protein-protein interaction (PPI) network
-  - Network comes from STRING database (https://string-db.org/)
+This network describes the interaction between the proteins. It comes from STRING database (https://string-db.org/). Version 11 is currently in use. It is established by 
+    - Number of nodes 
