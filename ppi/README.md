@@ -10,6 +10,8 @@ This is an example of network reduction for PPI network.
     |:---:|:---:|:---:|:---:|:---:|
     | ENSEMBLID_1 | x1_1 | x1_2 | ... | x1_m |
     | ENSEMBLID_2 | x2_1 | x2_2 | ... | x2_m |
+    | ... | ... | ... | ... | ... | ... |
+    | ENSEMBLID_n | xn_1 | xn_2 | ... | xn_m |
 
     The node table is the table collected by the user. It contains any features you wish to use for your purpose. However, the node presented in the node table must also be presented in the edge table. Otherwise, the network will have an isolated node, which won't propagate any information in terms for the graph feature extraction.
 
@@ -19,3 +21,5 @@ This is an example of network reduction for PPI network.
     |:---:|:---:|:---:|
     | ENSEMBLID_1 | ENSEMBLID_2 | s_12 |
     | ENSEMBLID_1 | ENSEMBLID_3 | s_13 |
+    | ... | ... | ... |
+    | ENSEMBLID_n | ENSEMBLID_j | s_nj |
