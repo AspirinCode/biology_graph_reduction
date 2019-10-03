@@ -30,4 +30,4 @@ This is an example of network reduction for PPI network.
     
 2. Network reduction
 
-    The network reduction is highly correlated with the applications/purpose of the study since it is related to certain node features. In this example, we presented a simple case, where we reduce the network by locating nodes (proteins) belong to the same pathway and have the same gene expression.
+    The network reduction is highly correlated with the applications/purpose of the study since it is related to certain node features. In this example, we presented a simple case. We reduce the network by contracting edges (merging nodes), whose two nodes (proteins) belong to the same pathway AND have the same gene expression.
