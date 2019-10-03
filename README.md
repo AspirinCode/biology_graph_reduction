@@ -14,5 +14,7 @@ This README file is written by Limeng Pu.
 # Biological Networks
 
 1. Protein-protein interaction (PPI) network
-This network describes the interaction between the proteins. It comes from STRING database (https://string-db.org/). Version 11 is currently in use. It is established by 
-    - Number of nodes 
+This network describes the interaction between the proteins. It comes from STRING database (https://string-db.org/). Version 11 is currently in use. It is established by literature mining. Each interaction has a score, which is the confidence score derived by the authors. The higher the score, more likely the interaction exists in reality.
+    - Number of nodes (proteins): 19,354.
+    - Number of edges (interactions): 11,759,454.
+    - Format: protein1, protein2, score.
