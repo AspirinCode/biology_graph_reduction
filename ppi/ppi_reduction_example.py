@@ -47,6 +47,7 @@ Set up the necessary paths
 """
 root = './data/'
 output_path = './reduced_output/'
+os.mkdir(output_path)
 """
 Load master_edge_table, affinity data, pathway data, disease scores, and kinase information
 """
