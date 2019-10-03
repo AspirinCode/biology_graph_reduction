@@ -22,4 +22,4 @@ This is an example of network reduction for PPI network.
     | ENSEMBLID_1 | ENSEMBLID_2 | s_12 |
     | ENSEMBLID_1 | ENSEMBLID_3 | s_13 |
     | ... | ... | ... |
-    | ENSEMBLID_n | ENSEMBLID_j | s_nj |
+    | ENSEMBLID_n | ENSEMBLID_k | s_nk |
