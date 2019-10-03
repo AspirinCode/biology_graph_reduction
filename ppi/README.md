@@ -2,7 +2,7 @@
 
 This is an example of network reduction for PPI network.
 
-1. Data representation
+1. Network representation
 
     The network is represented as a node table and an edge table. The node table takes the following format:
     
@@ -23,3 +23,11 @@ This is an example of network reduction for PPI network.
     | ENSEMBLID_1 | ENSEMBLID_3 | s_13 |
     | ... | ... | ... |
     | ENSEMBLID_n | ENSEMBLID_k | s_nk |
+
+    The edge table is the connections provided by the STRING database. It often require some preprocess (connected component) based on particular applications.
+    
+    These two tables are often enough to represent the PPI network.
+    
+2. Network reduction
+
+    The network reduction is highly correlated with the applications/purpose of the study since it is related to certain node features. In this example, we presented a simple case, where we reduce the network by locating nodes (proteins) belong to the same pathway and have the same gene expression.
