@@ -10,3 +10,8 @@ This README file is written by Limeng Pu.
 2. pandas 0.25.1 +
 3. networkx 2.2 +
 4. numpy 1.16.2 +
+
+# Biological Networks
+
+1. Protein-protein interaction (PPI) network
+  - Network comes from STRING database (https://string-db.org/)
